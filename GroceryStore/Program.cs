@@ -17,7 +17,7 @@ namespace GroceryStore
                 Console.WriteLine("Для начало работы нажмите на любую клавишу");
                 Console.ReadKey();
                 Console.Clear();
-                store.CortOverdueCannedFood();
+                store.GetInfoOverdueCannedFood();
                 Console.WriteLine($"\nВы хотите выйти из программы?Нажмите {exitButton}.\nДля продолжение работы нажмите любую другую клавишу");
 
                 if (Console.ReadKey().Key == exitButton)
@@ -53,7 +53,7 @@ namespace GroceryStore
             };
         }
 
-        public void CortOverdueCannedFood()
+        public void GetInfoOverdueCannedFood()
         {
             var filterOverdueCanned = _cannedFoodList.Where(cannedfood => (cannedfood.ProductionDate + cannedfood.ShelfLife) < _date.Year);
             ShowInfo(filterOverdueCanned);
